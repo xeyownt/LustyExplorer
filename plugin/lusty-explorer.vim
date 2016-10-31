@@ -843,12 +843,12 @@ class Explorer
         when 8                # Backspace/Del/C-h
           @prompt.backspace!
           @selected_index = 0
-        when 9, 13            # Tab and Enter
+        when 13               # Enter
           choose(:current_tab)
         when 23               # C-w (delete 1 dir backward)
           @prompt.up_one_dir!
           @selected_index = 0
-        when 14               # C-n (select next)
+        when 9, 14            # Tab and C-n (select next)
           @selected_index = \
             if @current_sorted_matches.size.zero?
               0
